@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">News</string>
+    <string name="img_content_description">Image</string>
+    <string name="author_placeholder">Author Placeholder</string>
+    <string name="source_placeholder">Source</string>
+    <string name="published_date_placeholder">11-22-1111</string>
+    <string name="article_description_placeholder">"Lorem ipsum dolor sit amet."</string>
+    <string name="article_title_placeholder">Title</string>
 </resources>
