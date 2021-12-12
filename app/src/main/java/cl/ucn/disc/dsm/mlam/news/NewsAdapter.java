@@ -1,6 +1,8 @@
 package cl.ucn.disc.dsm.mlam.news;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +52,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             holder.publishedAtView.setText(article.getPublishedAt());
             holder.authorView.setText(article.getAuthor());
             holder.sourceView.setText(article.getSource());
+            holder.sourceUrl = article.getUrl();
+
         } else {
 
             holder.titleView.setText("Error al cargar las noticias");
@@ -82,9 +86,20 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         private TextView publishedAtView;
         private TextView authorView;
         private TextView sourceView;
+        private String sourceUrl;
 
         public NewsViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri webPage = Uri.parse(sourceUrl);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
+                    if(intent.resolveActivity(v.getContext().getPackageManager()) != null){
+                        v.getContext().startActivity(intent);
+                    }
+                }
+            });
             imageView = itemView.findViewById(R.id.item_img);
             titleView = itemView.findViewById(R.id.item_title);
             descriptionView = itemView.findViewById(R.id.item_description);
