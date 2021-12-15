@@ -3,6 +3,9 @@ package cl.ucn.disc.dsm.mlam.news.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * The article model.
+ */
 @Entity(tableName = "articles")
 public class Article {
 

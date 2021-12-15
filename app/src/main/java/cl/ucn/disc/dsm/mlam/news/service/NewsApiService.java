@@ -10,12 +10,19 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * The NewsApi service.
+ */
 public class NewsApiService {
 
     private NewsApi newsApi;
 
+    /**
+     * Constructor.
+     */
     public NewsApiService() {
 
+        // Retrofit configuration.
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://newsapi.org/v2/")
                 .addConverterFactory(GsonConverterFactory.create())

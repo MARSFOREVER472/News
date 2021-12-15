@@ -19,6 +19,9 @@ import java.util.zip.Inflater;
 
 import cl.ucn.disc.dsm.mlam.news.model.Article;
 
+/**
+ * The news adapter for the recycler view.
+ */
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
     private LayoutInflater inflater;
@@ -72,12 +75,15 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         }
     }
 
-    public void setNews(List<Article> articles){
+    public void setNews(List<Article> articles) {
 
         this.articles = articles;
         notifyDataSetChanged();
     }
 
+    /**
+     * View holder for the article.
+     */
     public class NewsViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imageView;
@@ -93,9 +99,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // Make an intent to open the web browser.
                     Uri webPage = Uri.parse(sourceUrl);
                     Intent intent = new Intent(Intent.ACTION_VIEW, webPage);
-                    if(intent.resolveActivity(v.getContext().getPackageManager()) != null){
+                    if (intent.resolveActivity(v.getContext().getPackageManager()) != null) {
                         v.getContext().startActivity(intent);
                     }
                 }

@@ -5,12 +5,15 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Query;
 
+/**
+ * The interface newsApi.
+ */
 public interface NewsApi {
 
 
     final String API_KEY = "33486ed32d974966be1b007956de9db2";
 
-    @Headers({"X-Api-Key: "+API_KEY})
+    @Headers({"X-Api-Key: " + API_KEY})
     @GET("top-headlines?language=es")
     Call<NewsApiResult> getTopHeadLines(@Query("pageSize") int pageSize);
 }

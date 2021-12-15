@@ -13,6 +13,9 @@ import java.util.List;
 
 import cl.ucn.disc.dsm.mlam.news.model.Article;
 
+/**
+ * The main activity.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private NewsViewModel viewModel;
@@ -38,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Refresh the news.
+     *
+     * @param view
+     */
     public void refresh(View view) {
 
         viewModel.refresh();

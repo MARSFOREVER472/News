@@ -7,6 +7,9 @@ import androidx.room.Query;
 
 import java.util.List;
 
+/**
+ * The dao.
+ */
 @Dao
 public interface NewsDao {
 
