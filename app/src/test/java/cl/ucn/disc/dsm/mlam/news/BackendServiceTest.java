@@ -2,19 +2,17 @@ package cl.ucn.disc.dsm.mlam.news;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
 import cl.ucn.disc.dsm.mlam.news.model.Article;
-import cl.ucn.disc.dsm.mlam.news.service.NewsApiService;
+import cl.ucn.disc.dsm.mlam.news.service.BackendService;
 
 
-public class NewsApiServiceTest {
+public class BackendServiceTest {
     @Test
     public void testApiService(){
-        NewsApiService service = new NewsApiService();
-        List<Article> articles = service.getNews(10);
+        BackendService service = new BackendService();
+        List<Article> articles = service.getNews();
         for(Article i : articles) {
             System.out.println(i.getTitle());
         }

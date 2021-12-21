@@ -10,7 +10,7 @@ import java.util.List;
 import cl.ucn.disc.dsm.mlam.news.model.Article;
 import cl.ucn.disc.dsm.mlam.news.model.NewsDao;
 import cl.ucn.disc.dsm.mlam.news.model.NewsRoomDatabase;
-import cl.ucn.disc.dsm.mlam.news.service.NewsApiService;
+import cl.ucn.disc.dsm.mlam.news.service.BackendService;
 
 /**
  * The repository.
@@ -26,9 +26,9 @@ public class NewsRepository {
      */
     private LiveData<List<Article>> allNews;
     /**
-     * NewsApi Service.
+     * The backend service.
      */
-    private NewsApiService newsApi;
+    private BackendService backend;
 
     /**
      * Constructor.
@@ -38,7 +38,7 @@ public class NewsRepository {
     public NewsRepository(Application application) {
         NewsRoomDatabase db = NewsRoomDatabase.getDatabase(application);
         newsDao = db.getNewsDao();
-        newsApi = new NewsApiService();
+        backend = new BackendService();
         allNews = newsDao.getAllNews();
     }
 
@@ -55,7 +55,7 @@ public class NewsRepository {
      * Fetch the NewsApi Service.
      */
     public void fetchNewsApi() {
-        new InsertAsyncTask(newsDao, newsApi).execute();
+        new InsertAsyncTask(newsDao, backend).execute();
         allNews = newsDao.getAllNews();
     }
 
@@ -64,16 +64,16 @@ public class NewsRepository {
      */
     private class InsertAsyncTask extends AsyncTask<Void, Void, Void> {
         private NewsDao dao;
-        private NewsApiService service;
+        private BackendService service;
 
-        public InsertAsyncTask(NewsDao newsDao, NewsApiService newsApi) {
+        public InsertAsyncTask(NewsDao newsDao, BackendService backend) {
             dao = newsDao;
-            service = newsApi;
+            service = backend;
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
-            List<Article> articles = service.getNews(20);
+            List<Article> articles = service.getNews();
             for (Article article : articles) {
                 dao.insertArticle(article);
             }
