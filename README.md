@@ -8,6 +8,6 @@ _Marcelo Andrés Lam Biaggini_
 
 ### Diagrama de clases:
 
-Se muestra un diagrama de clases asociado al proyecto como tal:
+Acá se muestra un diagrama de clases asociado al proyecto como tal:
 
 ![Diagrama de clases](/DiagramaNewsAndroid.png)
