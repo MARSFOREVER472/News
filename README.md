@@ -4,7 +4,7 @@ _Esta es una aplicación Android para la asignatura de desarrollo de soluciones 
 
 ### Autor del proyecto:
 
-Marcelo Andrés Lam Biaggini
+_Marcelo Andrés Lam Biaggini_
 
 ### Diagrama de clases:
 
