@@ -4,7 +4,7 @@
 
 ### Autor del proyecto:
 
-_Marcelo Andrés Lam Biaggini_
+**_Marcelo Andrés Lam Biaggini_**
 
 ### Diagrama de clases:
 
