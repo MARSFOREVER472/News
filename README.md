@@ -8,6 +8,6 @@
 
 ### Diagrama de clases:
 
-_Acá se muestra un diagrama de clases desarrollado en una herramienta de elaboración de diagramas computacionales llamado D.I.A. asociado al proyecto como tal:_
+**_Acá se muestra un diagrama de clases desarrollado en una herramienta de elaboración de diagramas computacionales llamado D.I.A. asociado al proyecto como tal:_**
 
 ![Diagrama de clases](/DiagramaNewsAndroid.png)
