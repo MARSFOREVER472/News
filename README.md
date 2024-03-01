@@ -1,6 +1,6 @@
 # News
 
-_Esta es una aplicación Android para la asignatura de desarrollo de soluciones móviles durante el año 2021._
+**_Esta es una aplicación Android para la asignatura de desarrollo de soluciones móviles durante el año 2021._**
 
 ### Autor del proyecto:
 
